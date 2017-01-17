@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.yaguez.rxdialog.main.MainViewModel" />
+    </data>
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:onClick="@{view -> viewModel.hideDetails()}"
+            android:text="@string/hide_details" />
+
+        <TextView
+            android:visibility="@{viewModel.showDetails}"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="@string/details" />
+    </RelativeLayout>
+</layout>
